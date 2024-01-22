@@ -38,7 +38,7 @@ def add_fips_column(df):
 # Assume df is your pandas DataFrame with 'STNAME' and 'CTYNAME' columns
 # df = pd.DataFrame({'STNAME': ['California', 'Texas'], 'CTYNAME': ['Alameda County', 'Travis County']})
 df_with_fips = add_fips_column(df)
-# print(df_with_fips)
+print(df_with_fips)
 
 
 # %%
