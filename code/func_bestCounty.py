@@ -18,20 +18,11 @@ def find_optimal_counties(df):
     # Calculate z-scores
     filtered_df['zscore_pct_change'] = zscore(filtered_df['AVG_PCT_CHANGE_LAST_5_YEARS'])
     filtered_df['zscore_median_price'] = zscore(filtered_df['median_price'])
-    
-    # Compute average z-score (note: for median price, we take negative as lower prices are better)
     filtered_df['average_zscore'] = (filtered_df['zscore_pct_change'] - filtered_df['zscore_median_price']) / 2
-
-    # Sort based on average z-score in descending order
     sorted_df = filtered_df.sort_values(by='average_zscore', ascending=False)
-
-    # Select only the specified columns
     selected_columns_df = sorted_df[['CTYNAME', 'STNAME', 'AVG_PCT_CHANGE_LAST_5_YEARS', 'median_price', 'crime_rate_per_100000', 'POPESTIMATE2020', 'average_zscore']]
-
-    # Return the dataframe with selected columns
     return selected_columns_df
 
-# Assuming df is your dataframe with the required columns
 optimal_counties_df = find_optimal_counties(df)
 optimal_counties_df
 
