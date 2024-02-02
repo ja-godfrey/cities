@@ -25,6 +25,5 @@ def find_optimal_counties(df):
 
 optimal_counties_df = find_optimal_counties(df)
 #%%
-optimal_counties_df[['CTYNAME', 'STNAME', 'AVG_PCT_CHANGE_LAST_5_YEARS', 'median_price', 'POPESTIMATE2020']][:10]
+optimal_counties_df[['CTYNAME', 'STNAME', 'AVG_PCT_CHANGE_LAST_5_YEARS', 'median_price', 'POPESTIMATE2020']][:20]
 
-# %%
